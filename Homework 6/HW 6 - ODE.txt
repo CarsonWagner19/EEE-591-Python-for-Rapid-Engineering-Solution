@@ -1,0 +1,9 @@
+This HW is to solve three ordinary differential equations. For each equation, solve it for the range 0-7, with 700 data points. Use the python function odeint! (For reference, see m10_odeint.py and some of the other examples.)
+
+You will turn in a single python file called hw6.py which solves the three problems. For each problem graph the requested items. Note that y' is the first derivative of y with respect to t. Likewise, y" is the second derivative of y with respect to t. Note that np.cos() and np.sin() are computing values in radians.
+
+Problem 1: y’ = cos(t); initial value: y(0)=1. Plot y vs t. Since this is easily solvable, you know what the answer is so you should be able to refine your technique with this problem.
+
+Problem 2: y’ = -y + t2e-2t +10; initial value y(0) = 0. Plot y vs t.
+
+Problem 3: y''+4y'+4y = 25cos(t) + 25sin(t); initial values y(0) = 1, y’(0) =1. Plot y vs t and y’ vs t on the same plot.

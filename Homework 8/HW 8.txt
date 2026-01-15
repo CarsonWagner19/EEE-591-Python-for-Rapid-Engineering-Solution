@@ -1,0 +1,18 @@
+Filtering Real Noisy Audio Signals
+Your duty in this HW is to record you first and last name in a (not more than) 3-second audio file with your own voice. Corrupt it with noise on python and then filter it by nulling out the signal values greater than your voice's maximum frequency (formally called the "cut-off frequency"). The output of your code should be the mean square error (MSE) between the clean signal and the noisy signal in the time domain. The following hints are helpful:
+
+Normalize your signal's values by the maximum value as soon as you import it into your code. This is a very helpful step.
+Scale the amplitude of the noise by 0.1. You are recommended to first test your code with 0 noise amplitude (no noise), then try other values (0.01 and 1). Submit your final code with a noise amplitude scale of 0.1.
+Nulling out the noise must happen in the frequency domain (i.e. you have to take the signal to the frequency domain, null out the frequencies then take it back to the time domain to calculate the MSE)
+A mathematical fact in Python coding: If y = FFT(x), then y will have the same size of x, but will be in the frequency domain if x is a time-domain signal
+Fact (property of audio signals): y is an even signal (i.e. the first half of y is an identical mirror to its second half). When you null out some values in y in the positive frequency range, you need to null their corresponding values at the negative frequency range.
+The FFT operation in python results in y holding the signal corresponding to the positive frequencies in its first half while the negative ones are held in the second half of y. This is unlike the traditional way of plotting y where the first half of y holds the values corresponding to negative frequencies and the second half holds the positive frequencies.
+When you take the signal back to the time domain, you need to retain the real part only. The imaginary part should be close to zero (but not exactly zero). If you find the imaginary part not close to zero, then you made a mistake.
+You need to submit two files:
+HW8_FirstName_LastName.py
+Audio_FirstName_LastName.m4a (or any other extension)
+Your code should print only the value of the MSE. Nothing else (strings/types/performance/audio play....etc.)
+Do not submit your files in a zip file
+You are encouraged to compare your MSE value with your peers. However, expect large variations since it heavily depends on the cut-off frequency you choose.
+You will not lose points based on your MSE value unless it is too off. Depending on the format of your audio signal, some students might not be able to here their voice even after they filter the signal. Compare the MSE with filtering to that without filtering. Getting a smaller MSE is sufficient for this HW.
+You are encouraged to depend on what you learnt in the first topic of module 12. The following code is a good start HW8_FirstName_LastName-1.py 
